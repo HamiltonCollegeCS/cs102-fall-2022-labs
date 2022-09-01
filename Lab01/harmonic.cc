@@ -1,35 +1,40 @@
 /**
  * CS-102 Lab 01: Calculates the harmonic mean of two given numbers.
- * @file harmonic.cpp
+ * @file harmonic.cc
  * @author Dave Perkins
- * @collaborators Darren Strash, Alistair Campbell
- * @date January 19, 2022
+ * @collaborators Darren Strash, Alistair Campbell, Mark Bailey
+ * @date September 1, 2022
  */
+
 #include <iostream>
 
-float harmonic_mean(const float user1, const float user2);
+using namespace std;
+
+double harmonic_mean(double x, double y);
 
 // Controls operation of the program.
 int main() 
 {
-   std::cout << "Please enter a number: ";
-   float float1 = 0.0;
-   std::cin >> float1;
-   std::cout << "Please enter another number: ";
-   float float2 = 0.0;
-   std::cin >> float2;
-   const float result = harmonic_mean(float1, float2);
-   std::cout << "The harmonic mean is: " << result << std::endl;
+   double value1 = 0.0;
+   double value2 = 0.0;
+
+   cout << "Please enter a number: ";
+   cin >> value1;
+   cout << "Please enter another number: ";
+   cin >> value2;
+
+   const double result = harmonic_mean(value1, value2);
+   cout << "The harmonic mean is: " << result << endl;
    return 0;
 }
 
 /**
  * Returns the harmonic mean of two given numbers.
- * @param user1 The user's first number.
- * @param user2 The user's second number.
+ * @param x the first number
+ * @param y the second number
  * @return The harmonic mean of the given numbers.
  */
-float harmonic_mean(const float user1, const float user2) 
+double harmonic_mean(double x, double y) 
 {
-   return (2 * user1 * user2) / (user1 + user2);
+   return (2 * x * y) / (x + y);
 }
